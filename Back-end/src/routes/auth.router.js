@@ -10,7 +10,7 @@ import {
 
 const authRouter = Router();
 
-authRouter.post('/login', loginUserValidations, ctrlLoginUser);
-authRouter.post('/register', createUserValidations, ctrlCreateUser);
+authRouter.post('/IniciarSesion', loginUserValidations, ctrlLoginUser);
+authRouter.post('/Registrarme', createUserValidations, ctrlCreateUser);
 
 export { authRouter };

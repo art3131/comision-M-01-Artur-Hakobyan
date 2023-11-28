@@ -19,6 +19,12 @@ app.use(cors({
 app.use(helmet())
 app.use(morgan('dev'))
 
+
+
+
+
+
+
 app.listen(config.port, async () => {
     await startConnection({ uri: config.mongo, database: config.database });
     console.log('Server is running on port: http://localhost:' + config.port);

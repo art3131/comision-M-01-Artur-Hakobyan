@@ -9,14 +9,14 @@ const UserAuthForm = ({type}) =>{
         <section className="h-cover flex items-center justify-center">
             <form className="w-[80%] max-w-[400px] ">
             <h1 className="text-4xl fonte-gelasio capitalize text-center mb-24">
-                {type =="Iniciar-Sesion" ? "Bienvenido" : "Registrate"}
+                {type =="sign-in" ? "Welcome" : "Sign Up"}
             </h1>
             {
-                type !== "Iniciar-Sesion" ?
+                type !== "sign-in" ?
                 <InputBox 
                     name="fullname"
                     type="text"
-                    placeholder="Nombre y Apellido"
+                    placeholder="Full Name"
                     icon="fi-rr-user"
                    
                 />
@@ -32,7 +32,7 @@ const UserAuthForm = ({type}) =>{
                 <InputBox 
                     name="password"
                     type="password"
-                    placeholder="Contraseña"
+                    placeholder="Password"
                     icon="fi-rr-key"  
 
                 />
@@ -47,22 +47,22 @@ const UserAuthForm = ({type}) =>{
                 </div>
             <button className="btn-dark flex items-center justify-center gap-4 w-[90%] center">
                 <img src={GoogleIcon} alt="googleicon" className="w-6"/>
-                Continuar con Google
+                Continue with Google
             </button>
 
                 {
-                    type == "Iniciar-Sesion" ?
+                    type == "sign-in" ?
                     <p className="mt-6 text-dark-grey text-xl text-center">
-                    ¿No tiene una cuenta?
-                        <Link to="/Registrarme" className="underline text.black text-xl ml-1" >
-                            Registrarme
+                    You don't have an account?
+                        <Link to="/signup" className="underline text.black text-xl ml-1" >
+                            Sign Up
                         </Link>
                     </p>
                     :
                     <p className="mt-6 text-dark-grey text-xl text-center">
-                    ¿Ya tienes una cuenta?
-                        <Link to="/IniciarSesion" className="underline text.black text-xl ml-1" >
-                            Iniciar Sesion
+                    Do you have an account?
+                        <Link to="/signin" className="underline text.black text-xl ml-1" >
+                            Sign In
                         </Link>
                     </p>
                 }

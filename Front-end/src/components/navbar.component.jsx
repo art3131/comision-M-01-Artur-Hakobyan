@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className={"absolute bg-white w-full left-0 top-full mt-0.5 border-b border-grey py-4 px-[5vw] md:border-0 md:block md:relative md:inset-0 md:p-0 md:w-auto md:show " + (searchBoxVisibility ? "show" : "hide")} >
 
       <input type="text" 
-      placeholder="Buscar" 
+      placeholder="Search" 
       className="w-full md:w-auto bg-grey p-4 pl-6 pr-[12%]
       md:pr-6 rounded-full placeholder:text-dark-grey md:pl-12"
       />
@@ -31,16 +31,16 @@ const Navbar = () => {
           <i className="fi fi-rr-search text-xl"></i>
         </button>
 
-        <Link to="/editor" class="hidden md:flex gap-2 link rounded-full">
+        <Link to="/edit" class="hidden md:flex gap-2 link rounded-full">
         <i className="fi fi-rr-file-edit"></i>
-          <p>Postear</p>
+          <p>Post</p>
         </Link>
 
-        <Link className="btn-dark py-2 " to="/IniciarSesion">
-          Iniciar Sesion
+        <Link className="btn-dark py-2 " to="/signin">
+          Sign In
         </Link>
-        <Link className="btn-dark py-2 " to="/Registrarme">
-          Registrarme
+        <Link className="btn-dark py-2 " to="/signup">
+          Sign Up
         </Link>
       </div>
     </nav>

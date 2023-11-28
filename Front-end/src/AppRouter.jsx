@@ -9,8 +9,8 @@ function AppRouter() {
   return (
     <Routes>
      <Route path="/" element={<Navbar/>}>
-      < Route path="IniciarSesion" element ={<UserAuthForm type="Iniciar-Sesion"/>} />
-      < Route path="Registrarme" element ={<UserAuthForm type="Registrarme"/>} />
+      < Route path="signIn" element ={<UserAuthForm type="sign-in"/>} />
+      < Route path="signUp" element ={<UserAuthForm type="sign-up"/>} />
       </Route>
     </Routes>
   )
