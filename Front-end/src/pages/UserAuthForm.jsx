@@ -1,5 +1,5 @@
 import AnimationWrapper from "../common/page-animation"
-import InputBox from "../components/input.component"
+import InputBox from "../components/Input"
 import GoogleIcon from "../imgs/GoogleIcon.svg"
 import {Link} from "react-router-dom"
 
