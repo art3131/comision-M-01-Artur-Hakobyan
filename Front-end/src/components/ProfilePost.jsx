@@ -1,6 +1,6 @@
+import React from 'react'
 
-
-const HomePost = () => {
+const ProfilePost = () => {
   return (
     <div className="w-full flex mt-8 space-x-4">
       {/* left */}
@@ -12,7 +12,7 @@ const HomePost = () => {
             <h1 className="text-xl font-bold md:mb-2 mb-1 md:text-2xl">
             10 usees of artificial intelligence
             </h1>
-            <div className="flex mb-2 text sm font-semibold text-dark-gray items-center justify-between  md:mb-4">
+            <div className="flex mb-2 text sm font-semibold text-dark-grey items-center justify-between  md:mb-4">
                 <p>@art</p>
                 <div className="flex space-x-2">
                     <p>15/1/15</p>
@@ -26,4 +26,4 @@ const HomePost = () => {
   )
 }
 
-export default HomePost
+export default ProfilePost

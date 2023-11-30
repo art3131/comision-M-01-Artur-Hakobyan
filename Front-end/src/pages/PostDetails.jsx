@@ -1,8 +1,6 @@
-import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+
 import AnimationWrapper from "../common/page-animation"
-
-
+import Comment from "../components/Comment"
 
 const PostDetails = () => {
   return (
@@ -36,22 +34,10 @@ const PostDetails = () => {
             <div className="flex flex-col mt-4">
                 <h3 className="mt-6 mb-4 font-semibold">Comments:</h3>
             {/* comment */}
-                <div className="px-2 py-2 bg-grey rounded-lg my-2">
-                    <div className="flex items-center justify-between">
-                        <h3 className="font-bold text-dark-grey">@Art</h3>
-                        <div className="flex justify-center items-center space-x-4">
-                            <p className="text-dark-grey text-sm">14/14/21</p>
-                            <p className="text-dark-grey text-sm">14:14</p>
-                             <div>
-                                <a href="/posts/post/delete/{:id}"><i className="fi fi-rr-trash"></i></a>
-                                <a href="/posts/post/edit/{:id}"><i className="fi fi-rr-edit"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <p className="px-4 mt-2">
-                    asdñsajdñfsajfg
-                    </p>
-                </div>
+                <Comment/>
+                <Comment/>
+                <Comment/>
+                <Comment/>
             </div>
                {/* write a comment */}     
             <div className="flex w-full flex-col mt-4 md:flex-row">

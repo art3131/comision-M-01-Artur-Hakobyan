@@ -31,7 +31,7 @@ const Navbar = () => {
           <i className="fi fi-rr-search text-xl"></i>
         </button>
 
-        <Link to="/edit" class="hidden md:flex gap-2 link rounded-full">
+        <Link to="/write" className="hidden md:flex gap-2 link rounded-full">
         <i className="fi fi-rr-file-edit"></i>
           <p>Post</p>
         </Link>
