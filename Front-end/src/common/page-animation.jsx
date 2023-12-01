@@ -1,4 +1,4 @@
-//ANNIMACION DE TRANSICION ENTRE PAGINAS
+//Page Transition Animation
 
 import {AnimatePresence, motion} from "framer-motion"
 

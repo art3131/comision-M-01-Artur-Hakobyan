@@ -1,0 +1,31 @@
+Proyecto Argentina programa
+
+Pagina con login autenticacion y comentarios con stack Mern
+
+dependencias usadas para Front-end
+
+    "@flaticon/flaticon-uicons";
+    "autoprefixer";
+    "axios" ;
+    "colors" ;
+    "framer-motion" ;
+    "react" ;
+    "react-dom";
+    "react-icons";
+    "react-router-dom"; 
+    "postcss";
+    "tailwindcss";
+
+dependencias usadas para Back-end:
+
+"bcrypt";
+    "cookie-parser";
+    "cors";
+    "dotenv";
+    "express";
+    "jsonwebtoken";
+    "mongoose";
+    "multer";
+    "path";
+
+

@@ -1,43 +1,22 @@
-import mongoose, { Schema } from "mongoose";
+const mongoose=require('mongoose')
 
-const commentSchema = mongoose.Schema({
-    
-    blog_id: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: 'blogs'
+const CommentSchema=new mongoose.Schema({
+    comment:{
+        type:String,
+        required:true,
     },
-    blog_author: {
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: 'blogs',
+    author:{
+        type:String,
+        required:true,
     },
-    comment: {
-        type: String,
-        required: true
+    postId:{
+        type:String,
+        required:true,
     },
-    children: {
-        type: [Schema.Types.ObjectId],
-        ref: 'comments'
-    },
-    commented_by: {
-        type: Schema.Types.ObjectId,
-        require: true,
-        ref: 'users'
-    },
-    isReply: {
-        type: Boolean,
-    },
-    parent: {
-        type: Schema.Types.ObjectId,
-        ref: 'comments'
+    userId:{
+        type:String,
+        required:true
     }
+},{timestamps:true})
 
-},
-{
-    timestamps: {
-        createdAt: 'commentedAt'
-    }
-})
-
-export default mongoose.model("comments", commentSchema)
+module.exports=mongoose.model("Comment",CommentSchema)

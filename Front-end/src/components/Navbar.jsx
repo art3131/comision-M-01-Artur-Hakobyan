@@ -5,7 +5,7 @@ import {useState} from "react"
 const Navbar = () => {
 
   const [searchBoxVisibility, setSearchBoxVisibility] = useState(false)
-
+  const user = true
   return (
     <>
     <nav className="navbar">
@@ -31,17 +31,20 @@ const Navbar = () => {
           <i className="fi fi-rr-search text-xl"></i>
         </button>
 
-        <Link to="/write" className="hidden md:flex gap-2 link rounded-full">
+      {user? <Link className="btn-dark py-2 " to="/login">
+          Sign In
+        </Link> :
+        <Link to="/write" className="hidden bg-grey md:flex gap-2 link rounded-full">
         <i className="fi fi-rr-file-edit"></i>
           <p>Post</p>
-        </Link>
+       </Link>}
 
-        <Link className="btn-dark py-2 " to="/signin">
-          Sign In
-        </Link>
-        <Link className="btn-dark py-2 " to="/signup">
+        {user?
+        <Link className="btn-dark py-2 " to="/register">
           Sign Up
-        </Link>
+        </Link>:<Link className="btn-dark py-2 " to="/logout">
+          Log Out
+        </Link>}
       </div>
     </nav>
     <Outlet />
