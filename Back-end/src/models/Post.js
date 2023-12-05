@@ -1,33 +1,36 @@
-const mongoose=require('mongoose')
+import {Schema, model} from "mongoose"
 
-const PostSchema=new mongoose.Schema({
+const PostSchema = new Schema({
     title:{
         type:String,
         required:true,
-        unique:true
     },
-    desc:{
+    description:{
         type:String,
         required:true,
-        unique:true
     },
-    photo:{
+    comments:[
+        {
+            type: Schema.Types.ObjectId,
+            ref:'Comment',
+        }
+    ],
+    author:{
+        type: Schema.Types.ObjectId,
+        ref:'User',
+        required: true,
+    },
+    imageUrl:{
         type:String,
-        required:false,
-        
+        required:true,
     },
-    username:{
-        type:String,
-        required:true,  
-    },
-    userId:{
-        type:String,
-        required:true,  
-    },
-    categories:{
-        type:Array,
-        
-    },
-},{timestamps:true})
+    createdAt:{
+        type: Date.now
+    }
 
-module.exports=mongoose.model("Post",PostSchema)
+},{
+    timestamps: true,
+  versionKey: false,
+})
+
+export const PostModel = model("Post", PostSchema)
