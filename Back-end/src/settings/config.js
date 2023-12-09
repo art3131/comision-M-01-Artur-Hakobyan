@@ -1,8 +1,8 @@
 import 'dotenv/config';
 
 export const config = {
-  port: process.env.PORT || 4000,
+  port: process.env.PORT || 5000,
   mongo: process.env.MONGO_URI || 'mongodb://0.0.0.0:27017/express-mongo',
   jwt_secret: process.env.JWT_SECRET || 'secret',
-  database: process.env.DATABASE_NAME || 'blog-app',
+  database: process.env.DATABASE_NAME || 'playlist-app',
 };

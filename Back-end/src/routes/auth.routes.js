@@ -1,17 +1,16 @@
-import {Router} from 'express'
-import{
-    ctrlCreateUser, 
-    ctrlLoginUser
-} from "../controllers/user.controller.js"
+import { Router } from 'express';
 import {
-        loginUserValidations,
-        createUserValidations
-}from "../models/validations/user-validations.js"
+  ctrlCreateUser,
+  ctrlLoginUser,
+} from '../controllers/user.controller.js';
+import {
+  loginUserValidations,
+  createUserValidations,
+} from '../models/validations/user-validations.js';
 
+const authRouter = Router();
 
-const authRouter = Router()
+authRouter.post('/login', loginUserValidations, ctrlLoginUser);
+authRouter.post('/register', createUserValidations, ctrlCreateUser);
 
-authRouter.post("/register",createUserValidations , ctrlCreateUser )
-authRouter.post("/login",loginUserValidations , ctrlLoginUser)
-
-export {authRouter}
+export { authRouter };

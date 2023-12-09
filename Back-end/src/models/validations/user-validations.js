@@ -4,9 +4,9 @@ import { UserModel } from '../User.js';
 
 export const createUserValidations = [
   body('avatarUrl')
-    .notEmpty().withMessage('El campo { avatar } no debe estar vacio.')
-    .isString().withMessage('El campo { avatar } debe ser un string.')
-    .isURL().withMessage('El campo { avatar } debe ser una URL válida.'),
+    .notEmpty().withMessage('El campo { avatarUrl } no debe estar vacio.')
+    .isString().withMessage('El campo { avatarUrl } debe ser un string.')
+    .isURL().withMessage('El campo { avatarUrl } debe ser una URL válida.'),
   body('email')
     .notEmpty().withMessage('El campo { email } no debe estar vacio.')
     .isEmail().withMessage('El campo { email } debe ser un email válido.')

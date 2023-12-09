@@ -1,7 +1,6 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -20,11 +19,11 @@
     "express-validator": "^7.0.1",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0",
+    "mongoose": "^8.0.3",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1",
+    "nodemon": "^3.0.2",
     "standard": "^17.1.0"
   },
   "eslintConfig": {
@@ -38,5 +37,9 @@
       "promise/param-names": "off",
       "prefer-promise-reject-errors": "off"
     }
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
 }
