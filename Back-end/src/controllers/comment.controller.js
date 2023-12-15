@@ -46,9 +46,16 @@ export const ctrlListComments = async (req, res) => {
     }
   
     try {
+<<<<<<< HEAD
       const comments = await CommentModel.find({ post: postId },["-__v",])
       .populate("post",["comments","author","-__v"])
       .populate("author",["username"])
+=======
+      const comments = await CommentModel.find({ post: postId })
+      .populate("post")
+      .populate('author' ['username', 'avatar','createdAt'])
+  
+>>>>>>> f924f94db1dd5294d92da6a60e691134e3260f40
       res.status(200).json(comments);
     } catch (error) {
       res.status(500).json({ error: "Couldn't get comments" });
@@ -101,7 +108,8 @@ export const ctrlListComments = async (req, res) => {
       const comment = await CommentModel.findOne({
         _id: commentId,
         post: postId,
-      }).populate('post');
+      }).populate('post')
+        .populate('author' ['username', 'avatar','createdAt'])
   
       if (!comment) return res.status(404).json({ error: "Comment doesn't exist" });
   
@@ -120,6 +128,11 @@ export const ctrlListComments = async (req, res) => {
     if (!isPostAuthor) {
       return res.status(403).json({ error: 'User is not the post author' });
     }
+
+    const isCommentAuthor = await CommentAuthor({commentId,userId});
+    if(!isCommentAuthor){
+        return res.status(403).json({error:'User is not the comment author'})
+    }
   
     try {
       const comment = await CommentModel.findOne({ _id: commentId });
@@ -129,7 +142,7 @@ export const ctrlListComments = async (req, res) => {
       }
   
       comment.set(req.body);
-      console.log("error aca")
+      
       await comment.save();
      
       res.status(200).json(comment);

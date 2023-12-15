@@ -59,7 +59,7 @@ export const ctrlGetPost = async (req, res) => {
       _id: postId,
       author: userId,
     })
-      .populate('author', ['username', 'avatar','createdAt'])
+      .populate('author' ['username', 'avatar','createdAt'])
       .populate('comments'['username','description']);
 
     if (!post) {
@@ -72,31 +72,56 @@ export const ctrlGetPost = async (req, res) => {
   }
 };
 
-export const ctrlUpdatePost = async (req, res) => {
+//export const ctrlUpdatePost = async (req, res) => {
+//  const userId = req.user._id;
+//  
+//  const { postId } = req.params;
+// 
+//  try {
+//    const post = await PostModel.findOne({
+//      _id: postId,
+//      author: userId,
+//      
+//    });
+//
+//    if (!post) {
+//      return res.status(404).json({ error: 'Post not found' });
+//    }
+//
+//    post.set(req.body);
+//
+//    await post.save();
+//
+//    return res.status(200).json(post);
+//  } catch (error) {
+//    return res.status(500).json({ error: error.message });
+//  }
+//};
+
+export const ctrlUpdatePost = async (req,res) =>{
   const userId = req.user._id;
-  
   const { postId } = req.params;
- 
+
   try {
     const post = await PostModel.findOne({
       _id: postId,
       author: userId,
-      
     });
-
     if (!post) {
       return res.status(404).json({ error: 'Post not found' });
+
+    } await PostModel.findByIdAndUpdate(req.params._id, {$set:req.body},{new:true})
+      .populate('userId', '-password')
+
+      post.set(req.body)
+      await post.save()
+
+      return res.status(200).json(post)
+  }catch(error){
+      return res.status(500).json({ error: error.message });
     }
+}
 
-    post.set(req.body);
-
-    await post.save();
-
-    return res.status(200).json(post);
-  } catch (error) {
-    return res.status(500).json({ error: error.message });
-  }
-};
 
 export const ctrlDeletePost = async (req, res) => {
   const userId = req.user._id;
