@@ -46,9 +46,9 @@ export const ctrlListComments = async (req, res) => {
     }
   
     try {
-      const comments = await CommentModel.find({ post: postId })
-      .populate("post");
-  
+      const comments = await CommentModel.find({ post: postId },["-__v",])
+      .populate("post",["comments","author","-__v"])
+      .populate("author",["username"])
       res.status(200).json(comments);
     } catch (error) {
       res.status(500).json({ error: "Couldn't get comments" });
