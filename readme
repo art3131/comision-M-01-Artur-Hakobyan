@@ -1,31 +1,18 @@
-Proyecto Argentina programa
+Proyecto Argentina programa 4.0
 
-Pagina con login autenticacion y comentarios con stack Mern
+para el correcto uso del App usar las dependencias enlistadas
 
-dependencias usadas para Front-end
+dependencias usadas para el Front-end 
 
-    "@flaticon/flaticon-uicons";
-    "autoprefixer";
-    "axios" ;
-    "colors" ;
-    "framer-motion" ;
-    "react" ;
-    "react-dom";
-    "react-icons";
-    "react-router-dom"; 
-    "postcss";
-    "tailwindcss";
+    "@flaticon/flaticon-uicons";"autoprefixer";"colors" ;"framer-motion" ;"react-icons";"react-router-dom"; "postcss";"tailwindcss";
 
-dependencias usadas para Back-end:
+dependencias usadas para el Back-end:
 
-"bcrypt";
-    "cookie-parser";
-    "cors";
-    "dotenv";
-    "express";
-    "jsonwebtoken";
-    "mongoose";
-    "multer";
-    "path";
+"bcrypt"; "cookie-parser";"cors";"dotenv";"express";"jsonwebtoken";"mongoose";"multer";"path";
 
+Proyecto con Crud de tareas con funcionamiento completo del lado del Back-end para la creacion, borrado y edicion de Posts y commentarios
+y creacion login y logout 
 
+Pagina de creacion de posts, login y logout funcional del lado del Front-end
+
+Front-end sin completar, con problemas para el renderizado de los posts
