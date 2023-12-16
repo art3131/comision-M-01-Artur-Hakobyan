@@ -1,35 +1,31 @@
-import {Route, Routes} from 'react-router-dom'
-import Home from "./pages/Home"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
-import PostDetails from './pages/PostDetails'
-import CreatePost from './pages/CreatePost'
-import EditPost from './pages/EditPost'
-import Profile from './pages/Profile'
-import {  UserContextProvider } from './context/UserContext'
-import MyBlogs from './pages/MyBlogs'
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import RegisterForm from "./pages/RegisterForm";
+import LoginForm from "./pages/LoginForm";
+import PrivateRoutes from "./components/PrivateRoutes";
+import NewPost from "./pages/NewPost";
+import NotFoundPage from "./pages/404Page";
+//import PostPage from "./pages/PostPage";
+import AuthProvider from "./providers/AuthProvider";
 
-
-
-const App = () => {
-
-
-  
+function AppRouter() {
   return (
-      <UserContextProvider>
-      <Routes>
-      <Route exact path="/" element={<Home/>}/>
-      <Route exact path="/login" element={<Login/>}/>
-      <Route exact path="/register" element={<Register/>}/>
-      <Route exact path="/write" element={<CreatePost/>}/>
-      <Route exact path="/posts/post/:id" element={<PostDetails/>}/>
-      <Route exact path="/edit/:id" element={<EditPost/>}/>
-      <Route exact path="/myblogs/:id" element={<MyBlogs/>}/>
-      <Route exact path="/profile/:id" element={<Profile/>}/>
-      </Routes>
-    
-      </UserContextProvider>
-  )
-}
+    <Routes>
+    {/*  Rutas Protegidas */}
+   {   <Route element={<PrivateRoutes />}>
+   {/*<Route path="/post/post:id" element={<PostPage />} />*/}
+        
+        <Route path="/post/new" element={<NewPost />} />
+     {/*}  <Route path="/post/:postId" element={<CommentPage />} /> */}
+  </Route> }
 
-export default App
+      {/* Rutas Públicas */}
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<LoginForm />} />
+      <Route path="/register" element={<RegisterForm />} />
+      <Route path="/404" element={<NotFoundPage />} />
+      
+    </Routes>
+  );
+}
+export default AppRouter;
